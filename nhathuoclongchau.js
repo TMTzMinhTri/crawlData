@@ -7,13 +7,13 @@ function getPageSource(url) {
   return axios.get(url)
 }
 function htmlToData($) {
-  const _1 = $.find('h1#ten-thuoc').text().trim()
-  const _2 = $.find('h1#ten-thuoc').text().trim()
+  const _2 = $.find('.table-detail a').text().trim()
+  const _1 = $.find('.head-detail').text().trim()
   // const _3 = $.find('.textdetaillink').text().trim()
   // const _4 = $.find('.textdetaillink').text().trim()
   // const _5 = $.find('').text().trim()
-  // const _6 = $.find('.product-short-description').text().trim()
-  const _7 = $.find('a.texttplink').text().trim()
+  // const _6 = $.find('').text().trim()
+  const _7 = $.find('.lc-content-cover').text().trim()
   const _8 = $.find('').text().trim()
   const _9 = $.find('').text().trim()
   const _10 = $.find('.textdetaildrg1').text().trim()
@@ -37,10 +37,10 @@ function htmlToData($) {
     "Ten DP": _2,
     "barcode": '',
     "skus": '',
-    "Ngành hàng": "THUOC",
-    "Nhóm HH": "THUỐC KÊ ĐƠN",
-    "Nhóm điều tri I": "DD tiêm TM, vô trùng khác",
-    "Nhóm điều tri II": "DD tiêm TM, vô trùng",
+    "Ngành hàng": "",
+    "Nhóm HH": "",
+    "Nhóm điều tri I": "",
+    "Nhóm điều tri II": "",
     "_1": _7,
     "_2": _8,
     "_3": _9,
@@ -76,12 +76,14 @@ function htmlToData($) {
 
 
 
-const arr = ['https://www.thuocbietduoc.com.vn/thuoc-23575/phytomenadione-larjan-vitamin-k1-10mg1ml-injection.aspx']
+const arr = ['https://nhathuoclongchau.com/thuoc/novator-500-atra-5x10-19978.html']
 arr.forEach(item => getPageSource(item).then(rsp => {
   const $ = cheerio.load(rsp.data)
-  const data = []
-  data.push(htmlToData($("article")))
-  jsonexport(data, (_, csv) => {
-    fs.appendFileSync('data.csv', csv, 'utf8')
-  })
+  console.log($(".content-main").find('.cs-benh-content').html())
+  
+  // const data = []
+  // data.push(htmlToData($(".content-main")))
+  // jsonexport(data, (_, csv) => {
+  //   fs.appendFileSync('data.csv', csv, 'utf8')
+  // })
 }))
