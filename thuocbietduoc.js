@@ -12,7 +12,7 @@ function htmlToData($) {
   // const _3 = $.find('.textdetaillink').text().trim()
   // const _4 = $.find('.textdetaillink').text().trim()
   // const _5 = $.find('').text().trim()
-  // const _6 = $.find('').text().trim()
+  // const _6 = $.find('.product-short-description').text().trim()
   const _7 = $.find('a.texttplink').text().trim()
   const _8 = $.find('').text().trim()
   const _9 = $.find('').text().trim()
