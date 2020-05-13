@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "axios": "^0.19.2",
-    "jsonexport": "^2.4.1",
-    "lowdb": "^1.0.0",
-    "readline-sync": "^1.4.10"
+    "cheerio": "^1.0.0-rc.3",
+    "jsonexport": "^2.4.1"
   }
 }
