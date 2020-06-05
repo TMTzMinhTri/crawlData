@@ -5,18 +5,20 @@ const readlineSync = require('readline-sync')
 
 
 function callData() {
+  const start_time = "2019-4-1 00:00:00";
+  const end_time = "2020-5-30 23:59:59"
   const from = readlineSync.questionInt("từ trang: ")
   const to = readlineSync.questionInt("đến trang: ")
   for (let page = from; page <= to; page++) {
     const path = `https://crm.ipos.vn/general/sale-manager?pos_parent=FRUZII`
     axios.post(path, {
-      end_time: "2020-5-30 23:59:59",
+      end_time,
       page,
       receiver_emails: "",
-      start_time: "2019-4-1 00:00:00"
+      start_time
     }, {
       headers: {
-        Authorization: "bbf03369afd0b69cf9b7a5990efece5b5ddf1c73"
+        Authorization: "50d0135a8261ed6a5be75a139e561fd39e5e50cd"
       }
     }).then(rsp => {
       console.log(rsp.data.data.count)
